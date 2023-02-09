@@ -1,6 +1,6 @@
 {
   "name": "@jylopez/reservation-grid",
-  "version": "1.0.13.1",
+  "version": "1.0.14",
   "description": "A modular grid that allows managing reservations for a hotel",
   "author": "Daminort",
   "homepage": "https://daminort.github.io/reservation-grid",
@@ -22,8 +22,8 @@
     "rooms booking"
   ],
   "scripts": {
-    "build": "del dist && rollup -c",
-    "start": "del dist && rollup -c -w",
+    "build": "rm -rf dist && rollup -c",
+    "start": "rm -rf dist && rollup -c -w",
     "test": "jest",
     "deploy": "./gh-pages.sh",
     "relink": "npm link example/node_modules/react"
