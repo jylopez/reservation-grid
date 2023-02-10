@@ -33,7 +33,7 @@ const App: FC = () => {
     periods: [
       { start: '2021-11-04', end: '2021-11-09', status: 'confirmed', displayText:'<div><p>User 1</p></div>', onHoverToolTip: '<div><p>User 1</p></div>' },
       // for empty displayText and onHoverToolTip
-      { start: '2021-11-09', end: '2021-11-12', status: 'awaiting', displayText:'', onHonHoverToolTip: '' },
+      { start: '2021-11-09', end: '2021-11-12', status: 'awaiting' },
     ],
   ];
 
@@ -73,8 +73,8 @@ const App: FC = () => {
 |title|string|-|'Number'|
 |info|string|-|empty string|
 |data|Row[]|*|-|see example above
-|displayText|html element|*|''|see example above
-|onHoverToolTip|html element|*|''|see example above
+|displayText|html element|-|-|see example above
+|onHoverToolTip|html element|-|-|see example above
 |onClickTitle|Function|-|-|(value) => console.log(value)
 |onClickCell|Function|-|-|({ value, date, dayType }) => console.log({ value, date, dayType })
 
@@ -115,9 +115,8 @@ const data: Row[] = [
     value: 'Number 2',
     info: '3 seats',
     periods: [
-      // for empty displayText and onHoverToolTip
-      { start: '2021-11-01', end: '2021-11-02', status: 'confirmed', displayText:'', onHoverToolTip: '' },
-      { start: '2021-11-14', end: '2021-11-27', status: 'confirmed', displayText:'', onHoverToolTip: '' },
+      { start: '2021-11-01', end: '2021-11-02', status: 'confirmed' },
+      { start: '2021-11-14', end: '2021-11-27', status: 'confirmed' },
     ],
   },
 ];

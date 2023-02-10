@@ -270,7 +270,12 @@ function getDayData(date: string, periods: ReservedPeriod[] = []): string {
     const end = period.end
 
     if (date > start && date < end || date === start || date === end) {
-      return `${period.onHoverToolTip}`
+      if(period.onHoverToolTip) {
+        return `${period.onHoverToolTip}`
+      } else {
+        period.onHoverToolTip = ''
+        return `${period.onHoverToolTip}`
+      }
     }
   }
   return '';
@@ -281,7 +286,12 @@ function getDisplayText(date: string, periods: ReservedPeriod[] = []) {
     const start = period.start
 
     if (date === start ) {
-      return `${period.displayText}`
+      if(period.displayText) {
+        return `${period.displayText}`
+      } else {
+        period.displayText = ''
+        return `${period.displayText}`
+      }
     }
   }
   return '';
