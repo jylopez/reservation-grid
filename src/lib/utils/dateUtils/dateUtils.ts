@@ -264,7 +264,7 @@ function getDayType(date: string, periods: ReservedPeriod[] = []): DayType {
 }
 
 
-function getDayData(date: string, periods: ReservedPeriod[] = []) {
+function getDayData(date: string, periods: ReservedPeriod[] = []): string {
   for(const period of periods) {
     const start = period.start
     const end = period.end
@@ -273,7 +273,7 @@ function getDayData(date: string, periods: ReservedPeriod[] = []) {
       return `${period.onHoverToolTip}`
     }
   }
-  return ''
+  return '';
 }
 
 function getDisplayText(date: string, periods: ReservedPeriod[] = []) {
@@ -281,10 +281,10 @@ function getDisplayText(date: string, periods: ReservedPeriod[] = []) {
     const start = period.start
 
     if (date === start ) {
-      return period.displayText
+      return `${period.displayText}`
     }
   }
-  return ''
+  return '';
 }
 
 const dateUtils = {

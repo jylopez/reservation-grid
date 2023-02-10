@@ -5,6 +5,6 @@ export interface ReservedPeriod {
   end: string;
   status: DateStatus;
   data: string;
-  displayText:string;
-  onHoverToolTip: React.ReactNode;
+  displayText?:React.ReactNode;
+  onHoverToolTip?: React.ReactNode;
 }
