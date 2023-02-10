@@ -58,9 +58,11 @@ const Row: FC<RowProps> = (props) => {
         <div className='cell'>
           <br/>
           <Day type={dayType} />
+          {displayText && 
           <div className='displaytext'>
-            <p>{displayText}</p>
-          </div>
+            <div  dangerouslySetInnerHTML={ {__html: displayText} } />
+          </div> 
+          }
           {dayData && 
           <div className='tooltiptext'>
             <div  dangerouslySetInnerHTML={ {__html: dayData} } />
