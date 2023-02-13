@@ -6,7 +6,7 @@ export const row01: Row = {
   info: '4',
   column3: 'Banana',
   periods: [
-    { start: '2021-11-04', end: '2021-11-09', status: 'confirmed', data: 'sample', onHoverToolTip:"<div><h2>User 1</h2></div>", displayText:'<div><p>User 1</p></div>'},
+    { start: '2021-11-04', end: '2021-11-09', status: 'confirmed', data: 'sample', onHoverToolTip:"<div><h2>User 1</h2></div>", displayText:null},
     { start: '2021-11-09', end: '2021-11-12', status: 'awaiting',onHoverToolTip:"<div><p>User 2</p></div>", displayText:'<div><p>User 2</p></div>'},
     { start: '2021-11-21', end: '2021-11-26', status: 'confirmed', data:'sample1', onHoverToolTip:"<div><p>User 3</p></div>", displayText:'<div><p>User 3</p></div>'},
   ],
@@ -17,7 +17,7 @@ export const row02: Row = {
   info: '3 + 1',
   periods: [
     { start: '2021-11-01', end: '2021-11-02', status: 'confirmed' , data:'test1', onHoverToolTip:"<div><li>User 4</li></div>" },
-    { start: '2021-11-14', end: '2021-11-27', status: 'paid', data:'test1', onHoverToolTip:"<div><ol>User 5</ol></div>"},
+    { start: '2021-11-14', end: '2021-11-27', status: 'paid', data:'test1', onHoverToolTip:null},
   ],
 };
 

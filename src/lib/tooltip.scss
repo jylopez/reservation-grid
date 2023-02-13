@@ -1,7 +1,6 @@
 .cell {
-  position: relative;
-  display: inline-block;
-
+  display:inline-block;
+  position:relative;
 
   .displaytext {
     position: absolute;
@@ -25,33 +24,47 @@
       margin-top: 6px;
     }
   }
+}
 
-  .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    top: -6px;
-    right: -144%;
-  }
+.cell .tooltiptext {
+  min-width:200px; 
+  top: 5px;
+  left:50%;
+  transform:translate(-50%, -100%);
+  padding:10px 20px;
+  color:#ffffff;
+  background-color:#666666;
+  font-weight:normal;
+  font-size:13px;
+  border-radius:8px;
+  position:absolute;
+  z-index:99999999;
+  box-sizing:border-box;
+  box-shadow:0 1px 8px rgba(0,0,0,0.5);
+  visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
 
-  &:hover .tooltiptext {
-    visibility: visible;
-  }
+.cell:hover .tooltiptext {
+  visibility:visible; opacity:1;
+}
 
-  .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
-  }
+.cell .tooltiptext i {
+  position:absolute;
+  top:100%;
+  left:50%;
+  margin-left:-12px;
+  width:24px;
+  height:12px;
+  overflow:hidden;
+}
+
+.cell .tooltiptext i::after {
+  content:'';
+  position:absolute;
+  width:12px;
+  height:12px;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(45deg);
+  background-color: #666666;
+  box-shadow:0 1px 8px rgba(0,0,0,0.5);
 }
