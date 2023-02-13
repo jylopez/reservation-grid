@@ -27,6 +27,10 @@ const App: FC = () => {
     console.log('Selected cell:', { value, date, dayType });
   }, []);
 
+  const onClickColumn = useCallback((value: string) => {
+      console.log(`Selected column with date ${value}`);
+    }, []);
+
   const data: Row[] = [
     value: '# 1',
     info: '4',
@@ -50,6 +54,7 @@ const App: FC = () => {
       data={data}
       onClickTitle={onClickTitle}
       onClickCell={onClickCell}
+      onClickColumn={onClickColumn}
     />
   );
 };
@@ -76,6 +81,7 @@ const App: FC = () => {
 |displayText|html element|-|-|see example above
 |onHoverToolTip|html element|-|-|see example above
 |onClickTitle|Function|-|-|(value) => console.log(value)
+|onClickColumn|Function|-|-|(value) => console.log(value)
 |onClickCell|Function|-|-|({ value, date, dayType }) => console.log({ value, date, dayType })
 
 #### Data
