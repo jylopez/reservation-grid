@@ -12,10 +12,6 @@ const Header: FC<HeaderProps> = ({ title, info, column3, value}) => {
   const { start, end, locale = 'en', highlightToday, showInfo, showColumn3, selectedColumns, onClickColumn } = useMainContext();
   const range = useDaysRange(start, end, locale);
 
-  // function onClickHeaderDay() {
-  //   console.log('clicked')
-  // }
-
   const onClickCellLocal = useCallback((value) => () => {
     if (!onClickColumn) {
       return;
