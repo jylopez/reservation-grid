@@ -1,5 +1,5 @@
 import { DaysRange } from 'lib/interfaces/daysRange.interface';
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import clsx from 'clsx';
 
 import { useMainContext } from 'lib/context';
@@ -7,10 +7,22 @@ import { useDaysRange } from 'lib/hooks';
 
 import { HeaderProps } from './Header.interface';
 
-const Header: FC<HeaderProps> = ({ title, info, column3 }) => {
+const Header: FC<HeaderProps> = ({ title, info, column3, value}) => {
 
-  const { start, end, locale = 'en', highlightToday, showInfo, showColumn3, selectedColumns } = useMainContext();
+  const { start, end, locale = 'en', highlightToday, showInfo, showColumn3, selectedColumns, onClickColumn } = useMainContext();
   const range = useDaysRange(start, end, locale);
+
+  // function onClickHeaderDay() {
+  //   console.log('clicked')
+  // }
+
+  const onClickCellLocal = useCallback((value) => () => {
+    if (!onClickColumn) {
+      return;
+    }
+    
+    onClickColumn(value);
+  }, [value, onClickColumn]);
 
   const renderCell = (cell: DaysRange, field: keyof DaysRange) => {
 
@@ -29,6 +41,7 @@ const Header: FC<HeaderProps> = ({ title, info, column3 }) => {
         key={cell.value}
         className={className}
         data-testid={`cell-${field}-${cell.value}`}
+        onClick={onClickCellLocal(cell.value)}
       >
         {cell[field]}
       </td>

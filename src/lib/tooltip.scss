@@ -2,69 +2,49 @@
   display:inline-block;
   position:relative;
 
-  .displaytext {
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left: 25px;
-    height: 15px;
-    border-radius: 4px;
-    border: solid 1px #cdcdcd;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    max-width: 50px;
+  .tooltiptext {
+    min-width:200px; 
+    top: 5px;
+    left:50%;
+    transform:translate(-50%, -100%);
+    padding:10px 20px;
+    color:#ffffff;
+    background-color:#666666;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+  }
 
-    p {
-      font-size: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      max-width: 50px;
-      margin-top: 6px;
-    }
+  &:hover .tooltiptext {
+    visibility:visible; opacity:1;
+  }
+
+  .tooltiptext i {
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+  }
+
+  .tooltiptext i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    background-color: #666666;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
   }
 }
 
-.cell .tooltiptext {
-  min-width:200px; 
-  top: 5px;
-  left:50%;
-  transform:translate(-50%, -100%);
-  padding:10px 20px;
-  color:#ffffff;
-  background-color:#666666;
-  font-weight:normal;
-  font-size:13px;
-  border-radius:8px;
-  position:absolute;
-  z-index:99999999;
-  box-sizing:border-box;
-  box-shadow:0 1px 8px rgba(0,0,0,0.5);
-  visibility:hidden; opacity:0; transition:opacity 0.8s;
-}
 
-.cell:hover .tooltiptext {
-  visibility:visible; opacity:1;
-}
 
-.cell .tooltiptext i {
-  position:absolute;
-  top:100%;
-  left:50%;
-  margin-left:-12px;
-  width:24px;
-  height:12px;
-  overflow:hidden;
-}
-
-.cell .tooltiptext i::after {
-  content:'';
-  position:absolute;
-  width:12px;
-  height:12px;
-  left:50%;
-  transform:translate(-50%,-50%) rotate(45deg);
-  background-color: #666666;
-  box-shadow:0 1px 8px rgba(0,0,0,0.5);
-}

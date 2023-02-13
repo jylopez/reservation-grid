@@ -39,6 +39,7 @@ describe('Grid', () => {
     data: grid,
     onClickTitle: jest.fn(),
     onClickCell: jest.fn(),
+    onClickColumn: jest.fn(),
   }
 
   const setup = (props: GridProps) => {

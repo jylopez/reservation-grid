@@ -25,15 +25,20 @@ const Grid: FC = () => {
 
   const { start, end } = useMemo(() => createStartEnd(+year, +month), [year, month]);
 
+  
   const onClickTitle = useCallback((value) => {
     onChangeSelectedRows([value]);
   }, [onChangeSelectedRows]);
-
+  
   const onClickCell = useCallback(({ value, date }) => {
     onChangeSelectedColumns([date]);
     onChangeSelectedRows([value]);
   }, [onChangeSelectedColumns, onChangeSelectedRows]);
-
+  
+  const onClickColumn = useCallback((date) => {
+    onChangeSelectedColumns([date]);
+  }, [onChangeSelectedColumns]);
+  
   const props: GridProps = {
     start,
     end,
@@ -50,6 +55,7 @@ const Grid: FC = () => {
     locale,
     onClickTitle: onClickTitle,
     onClickCell: onClickCell,
+    onClickColumn:onClickColumn
   }
 
   return (
