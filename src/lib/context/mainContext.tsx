@@ -19,7 +19,7 @@ const initialValue: MainContext = {
   locale: 'en',
   onClickTitle: () => {},
   onClickCell: () => {},
-  onCellHover: () => {}
+  onClickColumn: () => {}
 }
 
 const mainContext = createContext<MainContext>(initialValue);

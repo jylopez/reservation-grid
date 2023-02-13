@@ -27,6 +27,7 @@ const Grid: FC<GridProps> = (props) => {
     locale = 'en',
     onClickTitle = () => {},
     onClickCell = () => {},
+    onClickColumn = () => {},
   } = props;
 
   const [customTheme, setCustomTheme] = useState<Theme>(styleUtils.createTheme(theme));
@@ -51,6 +52,7 @@ const Grid: FC<GridProps> = (props) => {
     locale: locale || 'en',
     onClickTitle,
     onClickCell,
+    onClickColumn
   };
 
   const renderRow = (row: Row) => {
